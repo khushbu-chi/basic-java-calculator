@@ -84,6 +84,6 @@ public class BasicCalculator {
             }
             }
             //Perform operation based on operator
-            //scanner.close();
+            scanner.close();
         }
     }
