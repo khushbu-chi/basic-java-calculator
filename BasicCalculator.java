@@ -1,15 +1,21 @@
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Scanner;
+
 public class BasicCalculator {
     static double addition(double number1, double number2) {
         //System.out.println(number1);
         return number1 + number2;
     }
+
     static double subtraction(double num1, double num2) {
         return num1 - num2;
     }
+
     static double multiplication(double num1, double num2) {
         return num1 * num2;
     }
+
     static double division(double num1, double num2) {
         return (num1/num2);
     }
@@ -34,15 +40,18 @@ public class BasicCalculator {
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
+
             if (choice == 5) {
                 System.out.println("Exiting the calculator. Goodbye!");
                 continueCalculation = false;
                 break;
             }else if(choice == 1) {
+                    // System.out.println(operator);
                     result = addition(num1, num2);
                     System.out.println(result);
                     continueCalculation=true;
                 } else if (choice == 2) {
+                    // System.out.println(operator);
                     result = subtraction(num1, num2);
                     System.out.println(result);
                     continueCalculation=true;
@@ -53,9 +62,14 @@ public class BasicCalculator {
                     continueCalculation=true;
                 } else if (choice == 4) {
                     // System.out.println(operator);
-                    result = division(num1, num2);
-                    System.out.println(result);
-                    continueCalculation=true;
+                    if(num2!=0) {
+                        result = division(num1, num2);
+                        System.out.println(result);
+                        continueCalculation = true;
+                    }else{
+                        System.out.println("Division by zero is not allowed.");
+                        continueCalculation = true;
+                    }
                 }else{
                 System.out.println("Invalid choice. Please try again!");
                 continueCalculation=true;
